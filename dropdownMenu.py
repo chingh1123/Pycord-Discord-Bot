@@ -75,4 +75,5 @@ async def colour(ctx):
     await ctx.send("Pick your favourite colour:", view=view)
 
 
-bot.run(os.environ['token']) #or you can just write `bot.run('YOUR TOKEN HERE')`
+from config import token
+bot.run(token)
