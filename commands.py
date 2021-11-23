@@ -9,5 +9,9 @@ bot = commands.Bot(command_prefix=">")
 async def ping(ctx):
     await ctx.send("pong")
 
-print('Bot is ready and it is online!')
+@bot.event
+async def on_ready():
+    print(f"Logged in as {bot.user} (ID: {bot.user.id})")
+    print("------")
+
 bot.run(os.environ['token']) #or you can just write `bot.run('YOUR TOKEN HERE')`
